@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace Morse_Code_Translator
 {
@@ -26,12 +26,10 @@ namespace Morse_Code_Translator
         {
             int x = 0;
             try
-            {
-                x = (int)MorsCodeSortedArray[Value];
+            {           
+                x = (int)MorsCodeSortedArray[Value];                
             }
             catch { x = 0; }
-            if (Value == 32)
-                return "/";
          
             return x.ToString();
         }
@@ -82,7 +80,9 @@ namespace Morse_Code_Translator
                 if ((int)NText.ToUpper()[i] == 32)
                     MText += "/";
                 else
+                {
                     MText += MorseCode.ToMorseCode(MorseCode.ToCodeValue((int)NText.ToUpper()[i] - Diffrence + DiffrenceAdd));
+                }                    
             }
             
             return MText;
